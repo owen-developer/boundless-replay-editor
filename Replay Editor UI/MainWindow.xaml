@@ -1,0 +1,207 @@
+﻿<Window x:Class="Replay_Editor_UI.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:Replay_Editor_UI"
+    mc:Ignorable="d"
+    Name="window"
+    Title="Boundless Replay Editor" Height="687.553" Width="1085.575"
+    ResizeMode="CanMinimize"
+        Loaded="Window_Loaded"
+        Closing="Window_Closing"
+        Icon="ServerLogo.png"
+xmlns:ui="http://schemas.modernwpf.com/2019"
+       WindowStartupLocation="CenterScreen"
+ Background="#FF002B60" Foreground="White">
+    <Window.Resources>
+        <Style x:Key="TitleBarButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+            <Setter Property="IsTabStop" Value="False" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border
+					x:Name="border"
+					Background="Transparent"
+					BorderThickness="0"
+					SnapsToDevicePixels="true">
+                            <ContentPresenter
+						x:Name="contentPresenter"
+						Margin="0"
+						HorizontalAlignment="Center"
+						VerticalAlignment="Center"
+						Focusable="False"
+						RecognizesAccessKey="True" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="border" Property="Background" Value="#26E8E8E8" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="border" Property="Background" Value="#3FE8E8E8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="TitleBarCloseButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+            <Setter Property="IsTabStop" Value="False" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border
+					x:Name="border"
+					Background="Transparent"
+					BorderThickness="0"
+					SnapsToDevicePixels="true">
+                            <ContentPresenter
+						x:Name="contentPresenter"
+						Margin="0"
+						HorizontalAlignment="Center"
+						VerticalAlignment="Center"
+						Focusable="False"
+						RecognizesAccessKey="True" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="border" Property="Background" Value="#26FFFFFF" />
+                                <Setter Property="Foreground" Value="#e8e8e8" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="border" Property="Background" Value="#3FE8E8E8" />
+                                <Setter Property="Foreground" Value="#242424" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonStyleMaterial" TargetType="{x:Type Button}">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Background" Value="{DynamicResource ButtonBackground}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ButtonForeground}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="8,5,8,6"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="{DynamicResource ContentControlThemeFontFamily}"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="FontSize" Value="{DynamicResource ControlContentThemeFontSize}"/>
+            <Setter Property="FocusVisualStyle" Value="{DynamicResource {x:Static SystemParameters.FocusVisualStyleKey}}"/>
+            <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals" Value="{DynamicResource UseSystemFocusVisuals}"/>
+            <Setter Property="ui:FocusVisualHelper.FocusVisualMargin" Value="-3"/>
+            <Setter Property="ui:ControlHelper.CornerRadius" Value="{DynamicResource ControlCornerRadius}"/>
+            <Setter Property="Stylus.IsPressAndHoldEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="Background" Background="{TemplateBinding Background}"  SnapsToDevicePixels="True">
+                            <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding ui:ControlHelper.CornerRadius}" Padding="{TemplateBinding Padding}">
+                                <ContentPresenter x:Name="ContentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            </Border>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="Background" Value="{DynamicResource ButtonBackgroundPointerOver}"/>
+                                <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource ButtonBorderBrushPointerOver}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="ContentPresenter" Value="{DynamicResource ButtonForegroundPointerOver}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" TargetName="Background" Value="{DynamicResource ButtonBackgroundPressed}"/>
+                                <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource ButtonBorderBrushPressed}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="ContentPresenter" Value="{DynamicResource ButtonForegroundPressed}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" TargetName="Background" Value="{DynamicResource ButtonBackgroundDisabled}"/>
+                                <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource ButtonBorderBrushDisabled}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="ContentPresenter" Value="{DynamicResource ButtonForegroundDisabled}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="32" ResizeBorderThickness="{x:Static SystemParameters.WindowResizeBorderThickness}" />
+    </WindowChrome.WindowChrome>
+    <Canvas>
+
+        <Button
+		Click="Button_Click"
+		RenderOptions.EdgeMode="Aliased"
+		Style="{StaticResource TitleBarButtonStyle}" Canvas.Right="46" Canvas.Top="0">
+            <Path
+			Width="46"
+			Height="32"
+			Data="M 18,15 H 28"
+			Stroke="{Binding Path=Foreground,
+							 RelativeSource={RelativeSource AncestorType={x:Type Button}}}"
+			StrokeThickness="1" />
+        </Button>
+        <Button Canvas.Right="0" Canvas.Top="0"
+		Grid.Column="4"
+		Click="Button_Click_2"
+		Style="{StaticResource TitleBarCloseButtonStyle}">
+            <Path
+			Width="46"
+			Height="32"
+			Data="M 18,11 27,20 M 18,20 27,11"
+			Stroke="{Binding Path=Foreground,
+							 RelativeSource={RelativeSource AncestorType={x:Type Button}}}"
+			StrokeThickness="1" />
+        </Button>
+        <WrapPanel HorizontalAlignment="Left" Height="659" VerticalAlignment="Top" Width="200">
+            <Image ToolTip="Boundless Leaking Tools" Source="https://cdn.discordapp.com/attachments/784431860213874708/792062603089674280/ServerLogo.png" />
+            <Button ToolTip="Application Settings" Name="ApplicationSettings" Content="Settings" Width="200" Height="35" Click="ApplicationSettings_Click" />
+        </WrapPanel>
+        <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Width="232" Canvas.Left="484" Canvas.Top="52">
+            <TextBox Name="SearchName" TextAlignment="Center" MouseDown="TextBox_MouseDown" Height="23" TextWrapping="NoWrap" Text="Search Name" Width="220"/>
+        </WrapPanel>
+        <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Width="232" Canvas.Left="484" Canvas.Top="97">
+            <TextBox Name="ReplaceName" TextAlignment="Center" MouseDown="TextBox_MouseDown" Height="23" TextWrapping="NoWrap" Text="Replace Name" Width="220"/>
+        </WrapPanel>
+        <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Width="232" Canvas.Left="260" Canvas.Top="252">
+            <TextBox Name="SearchHS" TextAlignment="Center" MouseDown="TextBox_MouseDown" Height="23" TextWrapping="NoWrap" Text="Search HS" Width="220"/>
+        </WrapPanel>
+        <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Width="232" Canvas.Left="260" Canvas.Top="297">
+            <TextBox Name="ReplaceHS" TextAlignment="Center" MouseDown="TextBox_MouseDown" Height="23" TextWrapping="NoWrap" Text="Replace HS" Width="220"/>
+        </WrapPanel>
+        <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Width="232" Canvas.Left="260" Canvas.Top="408">
+            <TextBox Name="SearchManual" TextAlignment="Center" MouseDown="TextBox_MouseDown" Height="23" TextWrapping="NoWrap" Text="Search Manual" Width="220"/>
+        </WrapPanel>
+        <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Width="232" Canvas.Left="260" Canvas.Top="455">
+            <TextBox Name="ReplaceManual" TextAlignment="Center" MouseDown="TextBox_MouseDown" Height="23" TextWrapping="NoWrap" Text="Replace Manual" Width="220"/>
+        </WrapPanel>
+        <Button ToolTip="Test if it's editable with your current inputs" Name="Test" Content="Test" Canvas.Left="484" Canvas.Top="142" Width="180" Height="35" Click="Test_Click"/>
+        <Button ToolTip="Convert your inputs" Name="ConvertButton" Content="Convert" Canvas.Left="484" Canvas.Top="188" Width="180" Height="35" Click="ConvertButton_Click" Style="{DynamicResource ButtonStyleMaterial}"/>
+        <WrapPanel Height="126" Canvas.Left="260" Canvas.Top="51" Width="201">
+            <Button Name="PickReplay" Content="Pick Replay" Width="200" Height="35" Click="PickReplay_Click"/>
+            <Button Margin="0,9,0,0" IsEnabled="False" Name="Decompress" Content="Decompress" Width="200" Height="35" Click="Decompress_Click"/>
+            <ComboBox Name="Type" ToolTip="BackendType (Not needed when using Manual Editing)" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,9,0,0">
+                <ComboBoxItem Selected="AthenaCharacter_Selected" Name="AthenaCharacter" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Content="Character" />
+                <ComboBoxItem Selected="AthenaBackpack_Selected" Name="AthenaBackpack" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Content="Backpack" />
+                <ComboBoxItem Selected="AthenaPickaxe_Selected" Name="AthenaPickaxe" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Content="Pickaxe" />
+                <ComboBoxItem Selected="AthenaDance_Selected" Name="AthenaDance" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Content="Dance Female" />
+                <ComboBoxItem Selected="AthenaDance2_Selected" Name="AthenaDance2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Content="Dance Male" />
+                <ComboBoxItem Selected="AthenaItemWrap_Selected" Name="AthenaItemWrap" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Content="Item Wrap" />
+                <ComboBoxItem Selected="AthenaGlider_Selected" Name="AthenaGlider" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Content="Glider" />
+            </ComboBox>
+        </WrapPanel>
+        <TextBlock TextWrapping="Wrap" Text="Manual Editing (Optional)" Canvas.Left="260" Canvas.Top="231"/>
+        <Button ToolTip="Convert your inputs" x:Name="ConvertButtonManualHS" Content="Convert" Canvas.Left="260" Canvas.Top="337" Width="180" Height="35" Click="ConvertButtonManualHS_Click"/>
+        <Button ToolTip="Convert your inputs" x:Name="ConvertButtonManual" Content="Convert" Canvas.Left="260" Canvas.Top="495" Width="180" Height="35" Click="ConvertButtonManual_Click"/>
+        <Button ToolTip="Move your file to your selected location" x:Name="Move" Content="Move" Canvas.Left="694" Canvas.Top="142" Width="180" Height="35" Click="Move_Click" Style="{DynamicResource ButtonStyleMaterial}"/>
+    </Canvas>
+</Window>
