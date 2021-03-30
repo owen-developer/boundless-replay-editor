@@ -10,10 +10,10 @@ Download [here](https://github.com/owen-developer/boundless-replay-editor/releas
 
 Once you've downloaded, open the program and select the type of item you are editing with the drop-down box below the decompress button.
 
+To edit an item type the name of the item you are editing from (Ex. Gingerbread Raider) Then type the name of the item you want (Ex. Aerial Assault Trooper) Then press `Test`, finally press `Convert`.
+
 ### Manual
 To swap something that has not been added to the BenBotAPI you may use the manual part of the editor. Just paste the asset into the appropriate textbox then press convert. (Ex. FortniteGame/Content/AssetPath/AssetName)
-
-To edit an item type the name of the item you are editing from (Ex. Gingerbread Raider) Then type the name of the item you want (Ex. Aerial Assault Trooper) Then press `Test`, finally press `Convert`.
 
 ## Contributing 
 Tag me on [discord](https://discord.gg/edDaZKCz5E) if you would like to give me a bug fix or addition to the software
