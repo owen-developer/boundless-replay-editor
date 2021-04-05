@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:Replay_Editor_UI"
     mc:Ignorable="d"
     Name="window"
-    Title="Boundless Replay Editor" Height="687.553" Width="1085.575"
+    Title="Boundless Replay Editor" Height="474.553" Width="782.575"
     ResizeMode="CanMinimize"
         Loaded="Window_Loaded"
         Closing="Window_Closing"
@@ -136,7 +136,7 @@ xmlns:ui="http://schemas.modernwpf.com/2019"
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="32" ResizeBorderThickness="{x:Static SystemParameters.WindowResizeBorderThickness}" />
     </WindowChrome.WindowChrome>
-    <Canvas>
+    <Canvas Margin="0,0,0,0">
 
         <Button
 		Click="Button_Click"
@@ -162,46 +162,42 @@ xmlns:ui="http://schemas.modernwpf.com/2019"
 							 RelativeSource={RelativeSource AncestorType={x:Type Button}}}"
 			StrokeThickness="1" />
         </Button>
-        <WrapPanel HorizontalAlignment="Left" Height="659" VerticalAlignment="Top" Width="200">
-            <Image ToolTip="Boundless Leaking Tools" Source="https://cdn.discordapp.com/attachments/784431860213874708/792062603089674280/ServerLogo.png" />
-            <Button ToolTip="Application Settings" Name="ApplicationSettings" Content="Settings" Width="200" Height="35" Click="ApplicationSettings_Click" />
+        <WrapPanel HorizontalAlignment="Left" Height="659" VerticalAlignment="Top" Width="95">
+            <Image ToolTip="Boundless Leaking Tools" Source="https://cdn.discordapp.com/attachments/784431860213874708/792062603089674280/ServerLogo.png" Height="93" Width="94" VerticalAlignment="Top" HorizontalAlignment="Left" />
+            <Button ToolTip="Application Settings" x:Name="ApplicationSettings" Content="Settings" Width="100" Height="36" Click="ApplicationSettings_Click" />
         </WrapPanel>
-        <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Width="232" Canvas.Left="484" Canvas.Top="52">
+        <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="232" Canvas.Left="141" Canvas.Top="134">
             <TextBox Name="SearchName" TextAlignment="Center" MouseDown="TextBox_MouseDown" Height="23" TextWrapping="NoWrap" Text="Search Name" Width="220"/>
         </WrapPanel>
-        <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Width="232" Canvas.Left="484" Canvas.Top="97">
+        <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Top" Height="36" Width="232" Canvas.Left="141" Canvas.Top="178">
             <TextBox Name="ReplaceName" TextAlignment="Center" MouseDown="TextBox_MouseDown" Height="23" TextWrapping="NoWrap" Text="Replace Name" Width="220"/>
         </WrapPanel>
-        <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Width="232" Canvas.Left="260" Canvas.Top="252">
+        <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="232" Canvas.Left="419" Canvas.Top="140">
             <TextBox Name="SearchHS" TextAlignment="Center" MouseDown="TextBox_MouseDown" Height="23" TextWrapping="NoWrap" Text="Search HS" Width="220"/>
         </WrapPanel>
-        <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Width="232" Canvas.Left="260" Canvas.Top="297">
+        <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Top" Height="36" Width="232" Canvas.Left="419" Canvas.Top="184">
             <TextBox Name="ReplaceHS" TextAlignment="Center" MouseDown="TextBox_MouseDown" Height="23" TextWrapping="NoWrap" Text="Replace HS" Width="220"/>
         </WrapPanel>
-        <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Width="232" Canvas.Left="260" Canvas.Top="408">
-            <TextBox Name="SearchManual" TextAlignment="Center" MouseDown="TextBox_MouseDown" Height="23" TextWrapping="NoWrap" Text="Search Manual" Width="220"/>
+        <Button ToolTip="Test if it's editable with your current inputs" Name="Test" Content="Test" Canvas.Left="139" Canvas.Top="224" Width="70" Height="34" Click="Test_Click"/>
+        <Button ToolTip="Convert your inputs" Name="ConvertButton" Content="Convert" Canvas.Left="213" Canvas.Top="224" Width="70" Height="34" Click="ConvertButton_Click" Style="{DynamicResource ButtonStyleMaterial}" RenderTransformOrigin="1.914,-0.132"/>
+        <WrapPanel Height="82" Canvas.Left="249" Canvas.Top="42" Width="110">
+            <Button Name="PickReplay" Content="Pick Replay" Width="106" Height="35" Click="PickReplay_Click"/>
+            <Button Margin="0,9,0,0" IsEnabled="False" Name="Decompress" Content="Decompress" Width="107" Height="35" Click="Decompress_Click"/>
         </WrapPanel>
-        <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Width="232" Canvas.Left="260" Canvas.Top="455">
-            <TextBox Name="ReplaceManual" TextAlignment="Center" MouseDown="TextBox_MouseDown" Height="23" TextWrapping="NoWrap" Text="Replace Manual" Width="220"/>
-        </WrapPanel>
-        <Button ToolTip="Test if it's editable with your current inputs" Name="Test" Content="Test" Canvas.Left="484" Canvas.Top="142" Width="180" Height="35" Click="Test_Click"/>
-        <Button ToolTip="Convert your inputs" Name="ConvertButton" Content="Convert" Canvas.Left="484" Canvas.Top="188" Width="180" Height="35" Click="ConvertButton_Click" Style="{DynamicResource ButtonStyleMaterial}"/>
-        <WrapPanel Height="126" Canvas.Left="260" Canvas.Top="51" Width="201">
-            <Button Name="PickReplay" Content="Pick Replay" Width="200" Height="35" Click="PickReplay_Click"/>
-            <Button Margin="0,9,0,0" IsEnabled="False" Name="Decompress" Content="Decompress" Width="200" Height="35" Click="Decompress_Click"/>
-            <ComboBox Name="Type" ToolTip="BackendType (Not needed when using Manual Editing)" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,9,0,0">
-                <ComboBoxItem Selected="AthenaCharacter_Selected" Name="AthenaCharacter" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Content="Character" />
-                <ComboBoxItem Selected="AthenaBackpack_Selected" Name="AthenaBackpack" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Content="Backpack" />
-                <ComboBoxItem Selected="AthenaPickaxe_Selected" Name="AthenaPickaxe" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Content="Pickaxe" />
-                <ComboBoxItem Selected="AthenaDance_Selected" Name="AthenaDance" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Content="Dance Female" />
-                <ComboBoxItem Selected="AthenaDance2_Selected" Name="AthenaDance2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Content="Dance Male" />
-                <ComboBoxItem Selected="AthenaItemWrap_Selected" Name="AthenaItemWrap" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Content="Item Wrap" />
-                <ComboBoxItem Selected="AthenaGlider_Selected" Name="AthenaGlider" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Content="Glider" />
-            </ComboBox>
-        </WrapPanel>
-        <TextBlock TextWrapping="Wrap" Text="Manual Editing (Optional)" Canvas.Left="260" Canvas.Top="231"/>
-        <Button ToolTip="Convert your inputs" x:Name="ConvertButtonManualHS" Content="Convert" Canvas.Left="260" Canvas.Top="337" Width="180" Height="35" Click="ConvertButtonManualHS_Click"/>
-        <Button ToolTip="Convert your inputs" x:Name="ConvertButtonManual" Content="Convert" Canvas.Left="260" Canvas.Top="495" Width="180" Height="35" Click="ConvertButtonManual_Click"/>
-        <Button ToolTip="Move your file to your selected location" x:Name="Move" Content="Move" Canvas.Left="694" Canvas.Top="142" Width="180" Height="35" Click="Move_Click" Style="{DynamicResource ButtonStyleMaterial}"/>
+        <TextBlock TextWrapping="Wrap" Text="Manual Editing (Optional)" Canvas.Left="419" Canvas.Top="118"/>
+        <Button ToolTip="Convert your inputs" x:Name="ConvertButtonManualHS" Content="Convert" Canvas.Left="473" Canvas.Top="224" Width="120" Height="36" Click="ConvertButtonManualHS_Click"/>
+        <Button ToolTip="Convert your inputs" x:Name="ConvertButtonManual" Content="Convert" Canvas.Left="329" Canvas.Top="368" Width="76" Height="34" Click="ConvertButtonManual_Click"/>
+        <Button ToolTip="Move your file to your selected location" x:Name="Move" Content="Move" Canvas.Left="289" Canvas.Top="224" Width="70" Height="34" Click="Move_Click" Style="{DynamicResource ButtonStyleMaterial}"/>
+        <ComboBox x:Name="Type" ToolTip="BackendType (Not needed when using Manual Editing)" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="139" Canvas.Top="274" RenderTransformOrigin="0.775,1.188">
+            <ComboBoxItem IsSelected="True" Selected="AthenaCharacter_Selected" x:Name="AthenaCharacter" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Content="Character" />
+            <ComboBoxItem Selected="AthenaBackpack_Selected" x:Name="AthenaBackpack" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Content="Backpack" />
+            <ComboBoxItem Selected="AthenaPickaxe_Selected" x:Name="AthenaPickaxe" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Content="Pickaxe" />
+            <ComboBoxItem Selected="AthenaDance_Selected" x:Name="AthenaDance" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Content="Dance Female" />
+            <ComboBoxItem Selected="AthenaDance2_Selected" x:Name="AthenaDance2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Content="Dance Male" />
+            <ComboBoxItem Selected="AthenaItemWrap_Selected" x:Name="AthenaItemWrap" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Content="Item Wrap" />
+            <ComboBoxItem Selected="AthenaGlider_Selected" x:Name="AthenaGlider" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Content="Glider" />
+        </ComboBox>
+        <TextBox x:Name="SearchManual" TextAlignment="Center" MouseDown="TextBox_MouseDown" Height="23" TextWrapping="NoWrap" Text="Search Manual" Width="220" Canvas.Left="139" Canvas.Top="322"/>
+        <TextBox x:Name="ReplaceManual" TextAlignment="Center" MouseDown="TextBox_MouseDown" Height="23" TextWrapping="NoWrap" Text="Replace Manual" Width="220" Canvas.Left="377" Canvas.Top="322"/>
     </Canvas>
 </Window>

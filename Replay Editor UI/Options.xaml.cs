@@ -62,6 +62,10 @@ namespace Replay_Editor_UI
                     BlackTheme.IsSelected = true;
                     this.Background = BrushMaker(10, 10, 10);
                     break;
+                case 3:
+                    MidnightTheme.IsSelected = true;
+                    this.Background = BrushMaker(24, 29, 38);
+                    break;
             }
         }
 
@@ -118,6 +122,17 @@ namespace Replay_Editor_UI
                 OutputPath.Text = output.SelectedPath;
                 BoundlessMessage.Show("Selected Output Path");
             }
+        }
+
+        private void BlackTheme_Selected(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MidNightTheme_Selected(object sender, RoutedEventArgs e)
+        {
+            UserSettings.SetUserSettings("Theme", "3");
+            LoadedWindow();
         }
     }
 }
