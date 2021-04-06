@@ -161,7 +161,7 @@ Background="#FF002B60" Foreground="White">
 							RelativeSource={RelativeSource AncestorType={x:Type Button}}}"
 		StrokeThickness="1" />
         </Button>
-        <ComboBox x:Name="Theme" ToolTip="Theme" Width="200" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,0" Canvas.Top="56" Canvas.Left="139">
+        <ComboBox x:Name="Theme" ToolTip="Theme" Width="200" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,0" Canvas.Top="56" Canvas.Left="139" Foreground="White" BorderBrush="Black" Background="Transparent">
             <ComboBoxItem Name="BlueTheme" Selected="ComboBoxItem_Selected" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Content="Blue" />
             <ComboBoxItem Name="DarkTheme" Selected="ComboBoxItem_Selected_1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Content="Dark" />
             <ComboBoxItem Name="BlackTheme" Selected="ComboBoxItem_Selected_3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="30" Content="Black" />
@@ -169,10 +169,10 @@ Background="#FF002B60" Foreground="White">
         </ComboBox>
         <TextBlock Canvas.Left="94" TextWrapping="Wrap" Text="Theme" Canvas.Top="64"/>
         <TextBlock Canvas.Left="66" TextWrapping="Wrap" Text="Output Path" Canvas.Top="117"/>
-        <TextBox VerticalScrollBarVisibility="Auto" Height="52" x:Name="OutputPath" TextAlignment="Center" TextWrapping="Wrap" Text="Output Path" ToolTip="Where should we output the replay when you click move?" FontSize="10" Width="164" Canvas.Left="139" Canvas.Top="100"/>
+        <TextBox VerticalScrollBarVisibility="Auto" Height="52" x:Name="OutputPath" TextAlignment="Center" TextWrapping="Wrap" Text="Output Path" ToolTip="Where should we output the replay when you click move?" FontSize="10" Width="164" Canvas.Left="139" Canvas.Top="100" Foreground="White" Background="#02FFFFFF" BorderBrush="Black"/>
         <TextBlock TextWrapping="Wrap" Text="Note: Some changes might need a application restart to take full effect." Canvas.Bottom="18" FontSize="11" Height="31" Width="190" Canvas.Left="18"/>
-        <Button ToolTip="Restart Application" x:Name="Restart" Content="Restart" Canvas.Right="15" Canvas.Bottom="15" Width="126" Height="35" Click="Restart_Click" />
-        <Button ToolTip="Select Folder" x:Name="SelectFolder" Content="..." Canvas.Right="15" Canvas.Bottom="15" Width="31" Height="55" Click="SelectFolder_Click" Canvas.Left="308" Canvas.Top="97" />
+        <Button ToolTip="Restart Application" x:Name="Restart" Content="Restart" Canvas.Right="15" Canvas.Bottom="15" Width="126" Height="35" Click="Restart_Click" Foreground="White" />
+        <Button ToolTip="Select Folder" x:Name="SelectFolder" Content="..." Canvas.Right="15" Canvas.Bottom="15" Width="31" Height="55" Click="SelectFolder_Click" Canvas.Left="308" Canvas.Top="97" Foreground="White" />
         <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="Made by owen#9655" Canvas.Top="10"/>
 
     </Canvas>

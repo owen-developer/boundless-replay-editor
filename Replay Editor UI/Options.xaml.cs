@@ -59,7 +59,7 @@ namespace Replay_Editor_UI
                     this.Background = BrushMaker(20, 20, 20);
                     break;
                 case 2:
-                    BlackTheme.IsSelected = true;
+                    BlackTheme.IsSelected = true;   
                     this.Background = BrushMaker(10, 10, 10);
                     break;
                 case 3:

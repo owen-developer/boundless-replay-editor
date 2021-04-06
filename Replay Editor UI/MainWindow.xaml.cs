@@ -88,10 +88,34 @@ namespace Replay_Editor_UI
                     break;
                 case 1:
                     this.Background = BrushMaker(30, 30, 30);
+                    PickReplay.Background = BrushMaker(60, 60, 60);
+                    Decompress.Background = BrushMaker(60, 60, 60);
+                    Type.Background = BrushMaker(60, 60, 60);
+                    SearchName.Background = BrushMaker(60, 60, 60);
+                    ReplaceName.Background = BrushMaker(60, 60, 60);
+                    ReplaceHS.Background = BrushMaker(60, 60, 60);
+                    Test.Background = BrushMaker(60, 60, 60);
+                    ConvertButton.Background = BrushMaker(60, 60, 60);
+                    Move.Background = BrushMaker(60, 60, 60);
+                    ConvertButtonManualHS.Background = BrushMaker(60, 60, 60);
+                    ConvertButtonManual.Background = BrushMaker(60, 60, 60);
+                    ApplicationSettings.Background = BrushMaker(60, 60, 60);
                     this.Foreground = BrushMaker(255, 255, 255);
                     break;
                 case 2:
                     this.Background = BrushMaker(0, 0, 0);
+                    PickReplay.Background = BrushMaker(10, 10, 10);
+                    Decompress.Background = BrushMaker(10, 10, 10);
+                    Type.Background = BrushMaker(10, 10, 10);
+                    SearchName.Background = BrushMaker(10, 10, 10);
+                    ReplaceName.Background = BrushMaker(10, 10, 10);
+                    ReplaceHS.Background = BrushMaker(10, 10, 10);
+                    Test.Background = BrushMaker(10, 10, 10);
+                    ConvertButton.Background = BrushMaker(10, 10, 10);
+                    Move.Background = BrushMaker(10, 10, 10);
+                    ConvertButtonManualHS.Background = BrushMaker(10, 10, 10);
+                    ConvertButtonManual.Background = BrushMaker(10, 10, 10);
+                    ApplicationSettings.Background = BrushMaker(10, 10, 10);    
                     this.Foreground = BrushMaker(255, 255, 255);
                     break;
                 case 3:
@@ -107,6 +131,7 @@ namespace Replay_Editor_UI
                     Move.Background = BrushMaker(17, 21, 26);
                     ConvertButtonManualHS.Background = BrushMaker(17, 21, 26);
                     ConvertButtonManual.Background = BrushMaker(17, 21, 26);
+                    ApplicationSettings.Background = BrushMaker(17, 21, 26);
                     this.Foreground = BrushMaker(255, 255, 255);
                     break;
             }
