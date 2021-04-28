@@ -19,4 +19,4 @@ To swap something that has not been added to the BenBotAPI you may use the manua
 Tag me on [discord](https://discord.gg/J6aBGB49r4) if you would like to give me a bug fix or addition to the software
 
 ## Compiling
-You may compile the program and use it for your own use and changes, but if you would like to publish your own, please credit my [GitHub](https://github.com/owen-developer/boundless-replay-editor/)
+You may compile the program and use it for your own use and changes, but if you would like to publish your own, please credit my [GitHub](https://github.com/owen-developer/boundless-replay-editor/) Also [heres an document](https://github.com/owen-developer/boundless-replay-editor/blob/main/explanation.md) that explains each and all the files.
