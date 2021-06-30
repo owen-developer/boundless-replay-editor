@@ -10,7 +10,7 @@ namespace Replay_Editor_UI.ReplayUtils.API
 
         static public string Get_HID_From_ID(string CosmeticID)
         {
-            string raw_json = requests.DownloadString("https://benbotfn.tk/api/v1/assetProperties?path=" + CosmeticID + "&lang=en");
+            string raw_json = requests.DownloadString("https://benbot.app/api/v1/assetProperties?path=" + CosmeticID + "&lang=en");
             dynamic parsed = JObject.Parse(raw_json);
             string HID = parsed.export_properties[0].HeroDefinition;
             return HID;
@@ -18,7 +18,7 @@ namespace Replay_Editor_UI.ReplayUtils.API
 
         static public string Get_SID_From_HID(string name)
         {
-            string raw_json = requests.DownloadString("https://benbotfn.tk/api/v1/assetProperties?path=FortniteGame/Content/Athena/Heroes/" + name + "&lang=en");
+            string raw_json = requests.DownloadString("https://benbot.app/api/v1/assetProperties?path=FortniteGame/Content/Athena/Heroes/" + name + "&lang=en");
             dynamic parsed = JObject.Parse(raw_json);
             string SID = parsed.export_properties[0].Specializations[0].assetPath;
             SID = SID.Replace("/Game/", "FortniteGame/Content/");
@@ -31,7 +31,7 @@ namespace Replay_Editor_UI.ReplayUtils.API
 
         static public string Get_CP1_From_SID(string name)
         {
-            string raw_json = requests.DownloadString("https://benbotfn.tk/api/v1/assetProperties?path=" + name);
+            string raw_json = requests.DownloadString("https://benbot.app/api/v1/assetProperties?path=" + name);
             dynamic parsed = JObject.Parse(raw_json);
             string CP = parsed.export_properties[0].CharacterParts[0].assetPath;
             return RemoveDBLNode.Replace(CP, true);
