@@ -10,7 +10,7 @@ namespace Replay_Editor_UI.ReplayUtils.API.Manual
 
         static public string Get_CP1_From_SID(string name)
         {
-            string raw_json = requests.DownloadString("https://benbotfn.tk/api/v1/assetProperties?path=" + name);
+            string raw_json = requests.DownloadString("https://benbot.app/api/v1/assetProperties?path=" + name);
             dynamic parsed = JObject.Parse(raw_json);
             string CP = parsed.export_properties[0].CharacterParts[0].assetPath;
             return RemoveDBLNode.Replace(CP, true);
@@ -18,7 +18,7 @@ namespace Replay_Editor_UI.ReplayUtils.API.Manual
 
         static public string Get_CP2_From_SID(string name)
         {
-            string raw_json = requests.DownloadString("https://benbotfn.tk/api/v1/assetProperties?path=" + name);
+            string raw_json = requests.DownloadString("https://benbot.app/api/v1/assetProperties?path=" + name);
             dynamic parsed = JObject.Parse(raw_json);
             string CP = parsed.export_properties[0].CharacterParts[1].assetPath;
             return RemoveDBLNode.Replace(CP, true);
@@ -26,7 +26,7 @@ namespace Replay_Editor_UI.ReplayUtils.API.Manual
 
         static public string Get_CP3_From_SID(string name)
         {
-            string raw_json = requests.DownloadString("https://benbotfn.tk/api/v1/assetProperties?path=" + name);
+            string raw_json = requests.DownloadString("https://benbot.app/api/v1/assetProperties?path=" + name);
             dynamic parsed = JObject.Parse(raw_json);
             string CP = parsed.export_properties[0].CharacterParts[2].assetPath;
             return RemoveDBLNode.Replace(CP, true);
