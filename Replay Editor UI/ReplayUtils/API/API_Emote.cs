@@ -10,7 +10,7 @@ namespace Replay_Editor_UI.ReplayUtils.API
 
         static public string Get_ANIM_From_ID(string CosmeticID)
         {
-            string raw_json = requests.DownloadString("https://benbotfn.tk/api/v1/assetProperties?path=" + CosmeticID + "&lang=en");
+            string raw_json = requests.DownloadString("http://benbot.app/api/v1/assetProperties?path=" + CosmeticID + "&lang=en");
             dynamic parsed = JObject.Parse(raw_json);
             string Anim = parsed.export_properties[0].Animation.assetPath;
             return Anim;
@@ -18,7 +18,7 @@ namespace Replay_Editor_UI.ReplayUtils.API
 
         static public string Get_ANIM_F_From_ID(string CosmeticID)
         {
-            string raw_json = requests.DownloadString("http://benbotfn.tk/api/v1/assetProperties?path=" + CosmeticID + "&lang=en");
+            string raw_json = requests.DownloadString("http://benbot.app/api/v1/assetProperties?path=" + CosmeticID + "&lang=en");
             dynamic parsed = JObject.Parse(raw_json);
             string Anim = parsed.export_properties[0].AnimationFemaleOverride.assetPath;
             return Anim;
