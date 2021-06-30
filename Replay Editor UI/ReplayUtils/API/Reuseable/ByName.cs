@@ -32,7 +32,7 @@ namespace Replay_Editor_UI.ReplayUtils.API.Reuseable
                     break;
 
             }
-            string raw_json = requests.DownloadString("https://benbotfn.tk/api/v1/cosmetics/br/search?lang=en&searchLang=en&matchMethod=full&name=" + name + "&backendType=" + backendType);
+            string raw_json = requests.DownloadString("https://benbot.app/api/v1/cosmetics/br/search?lang=en&searchLang=en&matchMethod=full&name=" + name + "&backendType=" + backendType);
             dynamic parsed = JObject.Parse(raw_json);
             string ID = parsed.path;
             return ID;
