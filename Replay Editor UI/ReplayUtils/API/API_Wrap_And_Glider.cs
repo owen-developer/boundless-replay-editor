@@ -13,11 +13,11 @@ namespace Replay_Editor_UI.ReplayUtils.API
             if (glider)
             {
                 raw_json = requests.DownloadString(
-                    "https://benbotfn.tk/api/v1/cosmetics/br/search?lang=en&searchLang=en&matchMethod=full&name=" + name + "&backendType=AthenaGlider");
+                    "https://benbot.app/api/v1/cosmetics/br/search?lang=en&searchLang=en&matchMethod=full&name=" + name + "&backendType=AthenaGlider");
             }
             else
             {
-                raw_json = requests.DownloadString("https://benbotfn.tk/api/v1/cosmetics/br/search?lang=en&searchLang=en&matchMethod=full&name=" + name + "&backendType=AthenaItemWrap");
+                raw_json = requests.DownloadString("https://benbot.app/api/v1/cosmetics/br/search?lang=en&searchLang=en&matchMethod=full&name=" + name + "&backendType=AthenaItemWrap");
             }
             dynamic parsed = JObject.Parse(raw_json);
             string ID = parsed.path;
