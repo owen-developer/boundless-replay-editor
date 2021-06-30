@@ -69,7 +69,7 @@ namespace Replay_Editor_UI.ReplayUtils.API
 
         static public string GetSubFooter(int i, string name)
         {
-            string raw_json = requests.DownloadString("https://benbotfn.tk/api/v1/assetProperties?path=" + name);
+            string raw_json = requests.DownloadString("https://benbot.app/api/v1/assetProperties?path=" + name);
             dynamic parsed = JObject.Parse(raw_json);
             string CP = parsed.export_properties[0].CharacterParts[0].assetPath;
             switch (i)
